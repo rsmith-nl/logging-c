@@ -1,0 +1,30 @@
+This is the readme file for the ... library.
+
+PURPOSE
+-------
+This library contains functions to ...
+
+BUILDING THE LIBRARY
+--------------------
+Invoking the "make" command gives you a list of all possible options.
+
+The usual invocation for a system-wide installation of the library would be
+to do "make all", "make test", login as root, and then do a "make install".
+
+Alternatively you can embed the library in your own program, by sticking it
+into a subdirectory, and invoking "make static" there.
+
+USING THE LIBRARY
+-----------------
+See the manual pages ... on how to use the
+functions. 
+
+LICENSE
+-------
+See the file LICENSE for details.
+
+AUTHOR
+------
+
+This library has been written and is maintained by Roland Smith
+<rsmith@xs4all.nl>.
