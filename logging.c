@@ -1,10 +1,11 @@
 // file: logging.c
 // vim:fileencoding=utf-8:ft=c:tabstop=2
+// This is free and unencumbered software released into the public domain.
 //
-// Copyright © 2026 R.F. Smith <rsmith@xs4all.nl>
-// SPDX-License-Identifier: MIT
+// Author: R.F. Smith <rsmith@xs4all.nl>
+// SPDX-License-Identifier: Unlicense
 // Created: 2024-08-31 23:26:12 +0200
-// Last modified: 2026-02-18T23:40:46+0100
+// Last modified: 2026-02-22T00:08:40+0100
 
 #include <stdint.h>
 #include <stdbool.h>
