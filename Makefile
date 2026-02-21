@@ -1,4 +1,4 @@
-CFLAGS = -pipe -std=c11 -fPIC -g3 -Wall -Wextra -Wstrict-prototypes -Wpedantic \
+CFLAGS = -pipe -std=c11 -Wall -Wextra -Wstrict-prototypes -Wpedantic \
 	-Wshadow-all -Wmissing-field-initializers -Wpointer-arith
 
 check:  ## checks if the code builds cleanly.
