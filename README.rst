@@ -5,7 +5,7 @@ Logging for C
 :tags: C programming, logging, public domain
 :author: Roland Smith
 
-.. Last modified: 2026-02-22T00:35:49+0100
+.. Last modified: 2026-02-22T02:46:55+0100
 .. vim:spelllang=en
 
 Introduction
@@ -25,7 +25,7 @@ Implementation
 ==============
 
 By choice, the implementation is a lot simpler than the Python module.
-Logging is only done to ``stderr``.
+Logging is directly done to ``stderr``. There is no separate formatter.
 
 
 Usage
