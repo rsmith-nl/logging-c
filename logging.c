@@ -5,7 +5,9 @@
 // Author: R.F. Smith <rsmith@xs4all.nl>
 // SPDX-License-Identifier: Unlicense
 // Created: 2024-08-31 23:26:12 +0200
-// Last modified: 2026-02-22T00:08:40+0100
+// Last modified: 2026-02-22T02:42:40+0100
+
+#include "logging.h"
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -15,8 +17,6 @@
 #include <string.h>
 #include <stdarg.h>
 #include <unistd.h>
-
-#include "logging.h"
 
 static char log_name[256] = {0};
 static char *prefix = "#%s %s: ";
