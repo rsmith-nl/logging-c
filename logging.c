@@ -5,7 +5,7 @@
 // Author: R.F. Smith <rsmith@xs4all.nl>
 // SPDX-License-Identifier: Unlicense
 // Created: 2024-08-31 23:26:12 +0200
-// Last modified: 2026-02-22T02:44:26+0100
+// Last modified: 2026-02-28T20:57:49+0100
 
 #include "logging.h"
 
@@ -26,7 +26,7 @@ void logging_configure(char *name, int level)
 {
   assert(level>=0);
   if (name) {
-    memcpy(log_name, name, 255);
+    strncpy(log_name, name, 255);
   }
   if (level>0) {
     log_level = level;
