@@ -11,6 +11,9 @@ check:  ## Checks if the code builds cleanly.
 	$(CC) $(CFLAGS) -c logging.c
 	rm -f *.o
 
+test: test.c single_header/logging.h
+	$(CC) $(CFLAGS) -o test test.c
+
 single_header/logging.h: logging.c logging.h  ## Build single header library (POSIX only).
 	cp logging.h single_header/logging.h
 	echo "" >>single_header/logging.h
@@ -20,7 +23,7 @@ single_header/logging.h: logging.c logging.h  ## Build single header library (PO
 	echo "#endif // LOGGING_IMPLEMENTATION" >>single_header/logging.h
 
 .PHONY: clean
-	rm -f *.o
+	rm -f *.o test single_header/logging.h
 
 .PHONY: style
 style:  ## Reformat source code using astyle.
