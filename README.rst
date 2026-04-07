@@ -5,7 +5,7 @@ Logging for C
 :tags: C programming, logging, public domain
 :author: Roland Smith
 
-.. Last modified: 2026-02-22T02:46:55+0100
+.. Last modified: 2026-04-07T19:13:19+0200
 .. vim:spelllang=en
 
 Introduction
@@ -32,3 +32,14 @@ Usage
 =====
 
 Just copy the source files (``logging.h``, ``logging.c``) in to your project.
+
+Alternatively, you can use this project as a *single header library*.
+This variant can be found in the subdirectory ``single_header/logging.h``.
+To use the single header library, copy the file ``logging.h`` from
+``single_header/`` into your project.
+In **one** of the C-files you use the single header library in, you should
+define ``LOGGING_IMPLEMENTATION`` before including the library::
+
+    #define LOGGING_IMPLEMENTATION
+    #include "logging.h"
+

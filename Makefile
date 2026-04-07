@@ -1,9 +1,23 @@
+# vim:fileencoding=utf-8:ft=make
+# Use as many jobs as the computer has cores.
+.MAKEFLAGS: -j C
+
 CFLAGS = -pipe -std=c99 -Wall -Wextra -Wstrict-prototypes -Wpedantic \
 	-Wshadow-all -Wmissing-field-initializers -Wpointer-arith
 
-check:  ## checks if the code builds cleanly.
+all: check single_header/logging.h
+
+check:  ## Checks if the code builds cleanly.
 	$(CC) $(CFLAGS) -c logging.c
 	rm -f *.o
+
+single_header/logging.h: logging.c logging.h  ## Build single header library (POSIX only).
+	cp logging.h single_header/logging.h
+	echo "" >>single_header/logging.h
+	echo "#ifdef LOGGING_IMPLEMENTATION" >>single_header/logging.h
+	tail -n +11 logging.c >>single_header/logging.h
+	echo "" >>single_header/logging.h
+	echo "#endif // LOGGING_IMPLEMENTATION" >>single_header/logging.h
 
 .PHONY: clean
 	rm -f *.o
