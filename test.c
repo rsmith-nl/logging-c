@@ -10,7 +10,8 @@
 #define LOGGING_IMPLEMENTATION
 #include "single_header/logging.h"
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
   (void)argc;
   (void)argv;
   logging_configure("logging test", LOG_DEBUG);
