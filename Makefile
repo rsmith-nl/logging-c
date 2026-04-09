@@ -5,11 +5,7 @@
 CFLAGS = -pipe -std=c99 -Wall -Wextra -Wstrict-prototypes -Wpedantic \
 	-Wshadow-all -Wmissing-field-initializers -Wpointer-arith
 
-all: check single_header/logging.h
-
-check:  ## Checks if the code builds cleanly.
-	$(CC) $(CFLAGS) -c logging.c
-	rm -f *.o
+all: test single_header/logging.h
 
 test: test.c single_header/logging.h
 	$(CC) $(CFLAGS) -o test test.c
@@ -23,6 +19,7 @@ single_header/logging.h: logging.c logging.h  ## Build single header library (PO
 	echo "#endif // LOGGING_IMPLEMENTATION" >>single_header/logging.h
 
 .PHONY: clean
+clean: ## Remove all generated files.
 	rm -f *.o test single_header/logging.h
 
 .PHONY: style
