@@ -5,7 +5,7 @@
 // Author: R.F. Smith <rsmith@xs4all.nl>
 // SPDX-License-Identifier: Unlicense
 // Created: 2024-08-31 23:25:54 +0200
-// Last modified: 2026-04-19T14:20:11+0200
+// Last modified: 2026-04-19T19:20:12+0200
 
 #pragma once
 #include <stdbool.h>
@@ -31,8 +31,8 @@ extern "C" {
 // If “level” is 0, the logging level is set to LOG_WARNING.
 extern void logging_configure(char *name, int level);
 
-// Check if the logging level is ≥ the given level.
-extern bool levelge(int level);
+// Check if the logging level is ≤ the given level.
+extern bool level(int level);
 
 // Debug message. For developer infomation.
 extern void debug(char *fmt, ...);
