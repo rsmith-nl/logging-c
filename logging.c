@@ -5,7 +5,7 @@
 // Author: R.F. Smith <rsmith@xs4all.nl>
 // SPDX-License-Identifier: Unlicense
 // Created: 2024-08-31 23:26:12 +0200
-// Last modified: 2026-02-28T20:57:49+0100
+// Last modified: 2026-04-19T14:20:07+0200
 
 #include "logging.h"
 
@@ -31,6 +31,11 @@ void logging_configure(char *name, int level)
   if (level > 0) {
     log_level = level;
   }
+}
+
+bool levelge(int level)
+{
+  return log_level >= level;
 }
 
 void debug(char *fmt, ...)

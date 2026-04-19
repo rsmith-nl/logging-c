@@ -5,9 +5,10 @@
 // Author: R.F. Smith <rsmith@xs4all.nl>
 // SPDX-License-Identifier: Unlicense
 // Created: 2024-08-31 23:25:54 +0200
-// Last modified: 2026-03-07T18:01:59+0100
+// Last modified: 2026-04-19T14:20:11+0200
 
 #pragma once
+#include <stdbool.h>
 
 // Requirement: ISO/IEC 9899:1999 (“ISO C99”).
 
@@ -29,6 +30,9 @@ extern "C" {
 // Every message with a “level” equal or lower than the given value is printed.
 // If “level” is 0, the logging level is set to LOG_WARNING.
 extern void logging_configure(char *name, int level);
+
+// Check if the logging level is ≥ the given level.
+extern bool levelge(int level);
 
 // Debug message. For developer infomation.
 extern void debug(char *fmt, ...);
