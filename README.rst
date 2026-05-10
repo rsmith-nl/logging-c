@@ -5,7 +5,7 @@ Logging for C
 :tags: C programming, logging, public domain
 :author: Roland Smith
 
-.. Last modified: 2026-04-07T19:13:19+0200
+.. Last modified: 2026-05-10T13:21:53+0200
 .. vim:spelllang=en
 
 Introduction
@@ -19,6 +19,13 @@ That is, to provide different logging at different levels;
 * warning (something unexpected happened)
 * info (informational message)
 * debug (helps to show the running of the software; for the developer)
+
+
+No AI policy
+============
+
+This code is by a human and for humans.
+"AI" / LLM-generated rewrites and additions are not welcome.
 
 
 Implementation
