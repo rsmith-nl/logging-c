@@ -1,14 +1,14 @@
 # vim:fileencoding=utf-8:ft=make
-# Use as many jobs as the computer has cores.
-.MAKEFLAGS: -j C
 
 CFLAGS = -pipe -std=c99 -Wall -Wextra -Wstrict-prototypes -Wpedantic \
 	-Wshadow-all -Wmissing-field-initializers -Wpointer-arith
 
+GIT_VERSION != git describe --dirty --always --tags
+
 all: test single_header/logging.h
 
-test: test.c single_header/logging.h
-	$(CC) $(CFLAGS) -o test test.c
+test: test.c logging.h logging.c
+	$(CC) $(CFLAGS) -DVERSION="\"${GIT_VERSION}\"" -o test test.c
 
 single_header/logging.h: logging.c logging.h  ## Build single header library (POSIX only).
 	cp logging.h single_header/logging.h
@@ -20,7 +20,7 @@ single_header/logging.h: logging.c logging.h  ## Build single header library (PO
 
 .PHONY: clean
 clean: ## Remove all generated files.
-	rm -f *.o test single_header/logging.h
+	rm -f *.o test
 
 .PHONY: style
 style:  ## Reformat source code using astyle.
